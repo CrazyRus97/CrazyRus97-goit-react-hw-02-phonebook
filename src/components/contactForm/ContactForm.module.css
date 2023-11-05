@@ -24,6 +24,17 @@ img {
 }
 
 /* ================================================================= */
+.mainForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+  padding: 0px 16px;
+
+  max-width: 100%;
+  width: 500px;
+}
+
 .formField {
   display: flex;
   flex-direction: column;
@@ -32,7 +43,7 @@ img {
   max-width: 100%;
   width: 500px;
 
-  color: #063a36;
+  color: #14063a;
   text-shadow: 0 1px 1px #fff;
 }
 
@@ -59,21 +70,21 @@ img {
   outline: none;
   border-radius: 8px;
 
-  box-shadow: rgb(0 0 0 / 24%) 10px 10px 5px 0px;
+  box-shadow: rgb(0 0 0 / 24%) 3px 3px 3px 0px;
   transition: all 0.2s ease-in-out;
 
-  background-color: #7ca78c;
+  background-color: #362f92;
   color: #fff;
   cursor: pointer;
 }
 .btnForm:hover,
 .btnForm:focus {
-  background-color: #b1dfc1;
-  color: #063a36;
-  box-shadow: -2px -2px 5px #fff, 2px 2px 5px #8ba793;
+  background-color: #b1c5df;
+  color: #12534e;
+  box-shadow: -2px -2px 5px #fff, 2px 2px 5px #8ba3a7;
 }
 .btnForm:hover.svg,
 .btnForm:focus.svg {
-  fill: #063a36;
-  stroke: #063a36;
+  fill: #12534e;
+  stroke: #12534e;
 }

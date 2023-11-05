@@ -12,16 +12,14 @@ const schema = yup.object().shape({
     .string()
     .trim()
     .matches(
-      /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
-      'Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d`Artagnan'
+      /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/
     )
     .required(),
   number: yup
     .string()
     .trim()
     .matches(
-      /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
-      'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
+      /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/
     )
     .required(),
 });
@@ -39,7 +37,7 @@ export const ContactForm = ({ onAddContact }) => {
       }}
       validationSchema={schema}
     >
-      <Form autoComplete="off">
+      <Form className={css.mainForm } autoComplete="off">
         <label className={css.formField} htmlFor="name">
           <div className={css.labelWrapper}>
             <BsPersonFill />
@@ -49,7 +47,7 @@ export const ContactForm = ({ onAddContact }) => {
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            title="Name may contain only letters, apostrophe, dash and spaces."
             required
           />
           <ErrorMessage name="name" component="span" />
@@ -62,7 +60,7 @@ export const ContactForm = ({ onAddContact }) => {
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses"
             required
           />
           <ErrorMessage name="number" component="span" />
